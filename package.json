@@ -10,11 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
-  "start": "cd server && node server.js",
-  "server": "cd server nodemon server.js --ignore client",
-  "build": "cd client && npm run build",
-  "install": "concurrently \"cd client && npm install\" \"cd server && npm install\" ",
-  "client": "cd client && npm start"
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\" ",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   "homepage": "https://github.com/sahebbhalla/contact-card#readme",
   "dependencies": {
     "concurrently": "^7.5.0"
+  
   }
 }
